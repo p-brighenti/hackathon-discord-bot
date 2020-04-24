@@ -1,0 +1,9 @@
+{
+    "uid": "titan-bot",
+    "append": true,
+    "script": "src/index.js",
+    "sourceDir": "/home/ec2-user/hackathon-discord-bot",
+    "logFile": "/home/ec2-user/hackathon-discord-bot/logs/forever.log",
+    "outFile": "/home/ec2-user/hackathon-discord-bot/logs/out.log",
+    "errFile": "/home/ec2-user/hackathon-discord-bot/logs/error.log"
+}
