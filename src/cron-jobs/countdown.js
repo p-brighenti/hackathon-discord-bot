@@ -4,7 +4,7 @@ const CHANNELS = require('../enums/channels');
 const scheduleConfig = require('../config/schedule');
 
 exports.setup = (client) => {
-    const channel = client.channels.cache.get(CHANNELS.MCS);
+    const channel = client.channels.cache.get(CHANNELS.GENERAL);
 
     const countdown = cron.schedule(scheduleConfig.COUNTDOWN, async () => {
         await channel.send(embeder.gifEmbed(gifOfTheDay[new Date().getDate()]));
