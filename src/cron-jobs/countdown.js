@@ -7,7 +7,9 @@ exports.setup = (client) => {
     const channel = client.channels.cache.get(CHANNELS.GENERAL);
 
     const countdown = cron.schedule(scheduleConfig.COUNTDOWN, async () => {
-        await channel.send(embeder.gifEmbed(gifOfTheDay[new Date().getDate()]));
+        const day = new Date().getDate();
+        if (day === 28) await client.user.setUsername('Hackathon Buddy');
+        await channel.send(embeder.gifEmbed(gifOfTheDay[day]));
     });
 
     countdown.start();
