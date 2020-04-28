@@ -3,7 +3,7 @@ const { validTeamName } = require('../utils/validator');
 
 module.exports = async (message) => {
     const currentScores = await store.read();
-    let [teamName, points] = message.content.split(' ');
+    let [command, teamName, points] = message.content.split(' ');
 
     teamName = teamName.toLowerCase();
     points = Number.parseInt(points);
@@ -15,7 +15,7 @@ module.exports = async (message) => {
 
     const newScores = {
         ...currentScores,
-        [teamName]: currentScores[teamName] + points,
+        [teamName]: Number.parseInt(currentScores[teamName]) + points,
     };
 
     await store.write(newScores);
