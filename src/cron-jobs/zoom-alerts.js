@@ -28,11 +28,11 @@ exports.setup = (client) => {
 exports.dirtyHotfix = (client) => {
     const channel = client.channels.cache.get(CHANNELS.GENERAL);
 
-    const alert30Before = cron.schedule('30 17 28 4 *', async () => {
+    const alert30Before = cron.schedule('30 16 28 4 *', async () => {
         if (hasHackathonStarted()) await channel.send(MESSAGES.THIRTY_MIN);
     });
 
-    const alert10Before = cron.schedule('50 17 28 4 *', async () => {
+    const alert10Before = cron.schedule('50 16 28 4 *', async () => {
         if (hasHackathonStarted()) await channel.send(MESSAGES.TEN_MIN);
     });
 
