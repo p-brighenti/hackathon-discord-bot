@@ -1,7 +1,7 @@
 const store = require('../storage/file-storage');
 const { validTeamName } = require('../utils/validator');
 
-module.exports = async (client, message) => {
+module.exports = async (message) => {
     const currentScores = await store.read();
     let [teamName, points] = message.content.split(' ');
 

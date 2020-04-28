@@ -10,11 +10,17 @@ exports.init = async () => {
 };
 
 function createStore() {
-    fs.writeFile(path, '', 'utf-8');
+    const initalState = {
+        alpha: '0',
+        bravo: '0',
+        charlie: '0',
+    };
+
+    fs.writeFile(path, JSON.stringify(initalState), 'utf-8');
 }
 
 exports.read = async () => {
-    return await JSON.parse(fs.readFile(path, 'utf-8'));
+    return JSON.parse(await fs.readFile(path, 'utf-8'));
 };
 
 exports.write = async (data) => {
