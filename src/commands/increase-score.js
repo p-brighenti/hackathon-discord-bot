@@ -1,4 +1,4 @@
-const store = require('../storage/file-storage');
+const store = require('../storage/file-store');
 const { validTeamName } = require('../utils/validator');
 
 module.exports = async (message) => {

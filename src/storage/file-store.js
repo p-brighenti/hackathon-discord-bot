@@ -1,5 +1,5 @@
 const fs = require('fs').promises;
-const { path } = require('../config/store');
+const { path, encoding } = require('../config/store');
 
 exports.init = async () => {
     try {
@@ -16,11 +16,11 @@ function createStore() {
         charlie: '0',
     };
 
-    fs.writeFile(path, JSON.stringify(initalState), 'utf-8');
+    fs.writeFile(path, JSON.stringify(initalState), encoding);
 }
 
 exports.read = async () => {
-    return JSON.parse(await fs.readFile(path, 'utf-8'));
+    return JSON.parse(await fs.readFile(path, encoding));
 };
 
 exports.write = async (data) => {

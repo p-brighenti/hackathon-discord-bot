@@ -1,5 +1,5 @@
 const AsciiTable = require('ascii-table');
-const store = require('../storage/file-storage');
+const store = require('../storage/file-store');
 
 module.exports = async (message) => {
     const hackathonTable = new AsciiTable();

@@ -9,6 +9,5 @@ exports.fromAC = (message) =>
 exports.isCommand = (message) => message.content.startsWith('&');
 
 exports.validTeamName = (name) => {
-    console.log(name);
     return !!Object.values(TEAMS).some((teamName) => teamName === name);
 };

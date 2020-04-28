@@ -8,11 +8,11 @@ const zoomAlerts = require('./cron-jobs/zoom-alerts');
 const countdown = require('./cron-jobs/countdown');
 const client = new Discord.Client();
 const COMMANDS = require('./commands/index');
-const store = require('./storage/file-storage');
+const store = require('./storage/file-store');
 const { fromAC, isCommand } = require('./utils/validator');
 
 client.on('ready', async () => {
-    init();
+    await init();
 });
 
 client.on('message', async (message) => {
