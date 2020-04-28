@@ -12,9 +12,6 @@ client.on('ready', async () => {
     zoomAlerts.setup(client);
     countdown.setup(client);
     zoomAlerts.dirtyHotfix(client);
-    client.channels.cache
-        .find((ch) => ch.name === 'red-room')
-        .send('@everyone cenas');
 });
 
 client.login(process.env.BOT_SECRET);
