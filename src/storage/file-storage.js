@@ -14,5 +14,9 @@ function createStore() {
 }
 
 exports.read = async () => {
-    return await fs.readFile(path, 'utf-8');
+    return await JSON.parse(fs.readFile(path, 'utf-8'));
+};
+
+exports.write = async (data) => {
+    await fs.writeFile(path, JSON.stringify(data), 'utf-8');
 };

@@ -6,3 +6,5 @@ exports.fromAC = (message) =>
     );
 
 exports.isCommand = (message) => message.content.startsWith('&');
+
+exports.validTeamName = (name) => {};

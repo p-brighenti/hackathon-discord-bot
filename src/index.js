@@ -16,10 +16,12 @@ client.on('ready', async () => {
 });
 
 client.on('message', async (message) => {
+    console.log(message);
+
     if (!fromAC(message) || !isCommand(message)) return;
 
-    const command = message.split(' ')[0];
-    COMMANDS[command](client, message.content);
+    const command = message.content.split(' ')[0];
+    COMMANDS[command](client, message);
 });
 
 client.login(process.env.BOT_SECRET);
