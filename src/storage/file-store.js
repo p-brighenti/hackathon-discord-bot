@@ -5,18 +5,18 @@ exports.init = async () => {
     try {
         await fs.access(path);
     } catch (err) {
-        createStore();
+        await createStore();
     }
 };
 
-function createStore() {
+async function createStore() {
     const initalState = {
         alpha: '0',
         bravo: '0',
         charlie: '0',
     };
 
-    fs.writeFile(path, JSON.stringify(initalState), encoding);
+    await fs.writeFile(path, JSON.stringify(initalState), encoding);
 }
 
 exports.read = async () => {
