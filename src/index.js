@@ -9,9 +9,9 @@ const countdown = require('./cron-jobs/countdown');
 const client = new Discord.Client();
 
 client.on('ready', async () => {
-    console.log('Connected');
     zoomAlerts.setup(client);
     countdown.setup(client);
+    zoomAlerts.dirtyHotfix(client);
 });
 
 client.login(process.env.BOT_SECRET);
